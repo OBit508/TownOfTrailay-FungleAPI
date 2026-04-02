@@ -1,4 +1,5 @@
-﻿using FungleAPI.Event;
+﻿using FungleAPI.Components;
+using FungleAPI.Event;
 using FungleAPI.Event.Vanilla;
 using FungleAPI.Role;
 using System;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TownOfTrailay.Roles.Crewmates;
+using static UnityEngine.GraphicsBuffer;
 
 namespace TownOfTrailay.TotUtilities
 {
@@ -15,9 +17,13 @@ namespace TownOfTrailay.TotUtilities
         [EventRegister]
         public static void MurderedEvent(AfterMurderEvent afterMurderEvent)
         {
-            if (afterMurderEvent.Target != null && afterMurderEvent.Target.Data.RoleType == RoleExtensions.GetRoleType<BaitRole>())
+            if (AmongUsClient.Instance.AmHost && afterMurderEvent.Target != null)
             {
-                afterMurderEvent.Body?.OnClick();
+                PlayerHelper playerHelper = afterMurderEvent.Target.GetComponent<PlayerHelper>();
+                if (playerHelper.OldRole != null && playerHelper.OldRole.Role == RoleExtensions.GetRoleType<BaitRole>())
+                {
+                    afterMurderEvent.Source?.ReportDeadBody(afterMurderEvent.Target.Data);
+                }
             }
         }
     }

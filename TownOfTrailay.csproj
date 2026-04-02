@@ -16,15 +16,18 @@
   <ItemGroup>
     <Compile Include="BepInEx\BepInAutoPluginAttribute.cs" />
     <Compile Include="BepInEx\Preloader\Core\Patching\PatcherAutoPluginAttribute.cs" />
+    <Compile Include="Buttons\ImpostorButtons\VampireBite.cs" />
     <Compile Include="Roles\Crewmates\BaitRole.cs" />
+    <Compile Include="Roles\Impostors\VampireRole.cs" />
     <Compile Include="TotUtilities\TotEvents.cs" />
+    <Compile Include="TotUtilities\TotFreeplayFolder.cs" />
+    <Compile Include="TotUtilities\TotPalette.cs" />
     <Compile Include="TotUtilities\TotTranslation.cs" />
     <Compile Include="TownOfTrailayPlugin.cs" />
     <Compile Include="System\Runtime\CompilerServices\RefSafetyRulesAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Libs\" />
-    <Folder Include="Roles\Impostors\" />
     <Folder Include="Roles\Neutrals\" />
   </ItemGroup>
   <ItemGroup>

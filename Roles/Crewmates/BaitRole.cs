@@ -17,6 +17,6 @@ namespace TownOfTrailay.Roles.Crewmates
         public StringNames RoleName => TotTranslation.BaitName;
         public StringNames RoleBlur => TotTranslation.BaitBlur;
         public StringNames RoleBlurMed => TotTranslation.BaitBlur;
-        public Color RoleColor { get; } = new Color32(64, 141, 145, byte.MaxValue);
+        public Color RoleColor { get; } = TotPalette.BaitColor;
     }
 }

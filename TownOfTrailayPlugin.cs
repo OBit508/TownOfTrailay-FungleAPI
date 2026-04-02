@@ -3,6 +3,7 @@ using BepInEx.Unity.IL2CPP;
 using FungleAPI;
 using FungleAPI.PluginLoading;
 using HarmonyLib;
+using TownOfTrailay.TotUtilities;
 
 namespace TownOfTrailay
 {
@@ -24,7 +25,7 @@ namespace TownOfTrailay
         public static ModPlugin Plugin => FunglePlugin<TownOfTrailayPlugin>.Plugin;
         public override void Load()
         {
-
+            TotTranslation.SetTranslationHelpers();
         }
     }
 }
